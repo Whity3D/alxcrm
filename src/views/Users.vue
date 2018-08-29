@@ -1,11 +1,7 @@
 <template>
     <div>
         <h1>CLIENTS</h1>
-            <div v-for="client in allClients">
-                <ClientCard v-bind:client="client"></ClientCard>
-            </div>
-
-
+            <ClientCard :clients="allClients"></ClientCard>
             <v-btn  color="green" fab to="/add-user">
                 <v-icon>person_add</v-icon>
             </v-btn>
