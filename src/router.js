@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Users from './views/Users.vue';
 import AddUser from './views/AddUser.vue';
+import Cars from './views/Cars';
 
 Vue.use(Router);
 
@@ -33,5 +34,10 @@ export default new Router({
       name: 'add-user',
       component: AddUser,
     },
+    {
+      path: '/cars',
+      name: 'cars',
+      component: Cars,
+    }
   ],
 });

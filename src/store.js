@@ -11,7 +11,12 @@ export default new Vuex.Store({
         phone: '1111111',
       },
     ],
+    carsBrands: [
 
+    ],
+    carsModels: [
+
+    ],
   },
   mutations: {
     addClient(state, newClient) {

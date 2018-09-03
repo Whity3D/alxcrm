@@ -1,21 +1,28 @@
 <template>
   <div id="app">
-    <v-toolbar color="red">
-      <v-btn flat to="/">
-        <v-toolbar-title>AvtoluxCRM</v-toolbar-title>
-      </v-btn>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn icon to="/users">
-          <v-icon>person</v-icon>
+    <v-app dark>
+      <v-toolbar color="red">
+        <v-btn flat to="/">
+          <v-toolbar-title>AvtoluxCRM</v-toolbar-title>
         </v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+        <v-spacer></v-spacer>
+        <v-toolbar-items>
+          <v-btn icon to="/users">
+            <v-icon>person</v-icon>
+          </v-btn>
+        </v-toolbar-items>
+        <v-toolbar-items>
+          <v-btn icon to="/cars">
+            <v-icon>directions_car</v-icon>
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
+      <router-view/>
+    </v-app>
   </div>
 </template>
 
