@@ -28,7 +28,7 @@
     },
     methods: {
       addCarBrand() {
-        this.$store.commit('addCarsBrand', this.brandTitle);
+        this.$store.dispatch('saveCarsBrand', this.brandTitle);
         this.$emit('close');
         this.brandTitle = '';
       }

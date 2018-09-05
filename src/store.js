@@ -22,15 +22,22 @@ export default new Vuex.Store({
     addClient(state, newClient) {
       state.allClients.push(newClient);
     },
-    addCarsBrand: function (state, brandTitle) {
-      Vue.http.post('http://localhost:8081/cars', {title: brandTitle}).then(
-      () => {
-        state.carsBrands.push(brandTitle)
-      }
-     );
+    addCarsBrand(state, brandTitle) {
+      state.carsBrands.push(brandTitle)
+    },
+    updateCarsList(state, newBrandList) {
+      state.carsBrands = newBrandList;
     },
   },
   actions: {
-
+    saveCarsBrand({ commit, state, dispatch }, brandTitle) {
+      Vue.http.post('http://localhost:8081/cars', {title: brandTitle}).then(
+        () => { dispatch('updateCarsList', brandTitle) })
+    },
+    updateCarsList({ commit }) {
+      Vue.http.get('http://localhost:8081/cars').then(
+        (response) => { commit('updateCarsList', response.body) }
+      )
+    }
   },
 });
